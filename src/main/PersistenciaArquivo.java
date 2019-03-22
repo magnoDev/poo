@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class PersistenciaArquivo {
     
     
-    public void salvarConta(Conta conta) {
+    public void salvarConta(ContaCorrente conta) {
 
         FileWriter arq;
         try {

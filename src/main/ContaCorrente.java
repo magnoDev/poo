@@ -38,9 +38,10 @@ public class ContaCorrente extends Conta{
     @Override
     public boolean sacar(double valor){
         if(this.getSaldo() >= valor){
-            this.setSaldo(getSaldo() - valor);
+            this.setSaldo(this.getSaldo() - valor);
             return true;
-        }else if(this.getLimite() >= (valor - this.getSaldo())){
+        }else if((this.getLimite() + this.getSaldo()) >= valor){
+            this.setSaldo(valor - this.getLimite());
             this.setLimite(this.getLimite() - (valor - this.getSaldo()));
             return true;
         }else{
